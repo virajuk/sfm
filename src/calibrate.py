@@ -23,6 +23,7 @@ from .common import splitfn
 # built-in modules
 import os
 
+
 def main():
     import sys
     import getopt
