@@ -25,3 +25,5 @@ print(rain)
 
 rain = Rain.get_instance()
 print(rain)
+
+print("this supposed not to happen")
