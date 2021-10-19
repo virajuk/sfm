@@ -26,8 +26,8 @@ class Calibrate:
 
     def __read_images_from_dir_and_sort(self):
 
-        self.images_left = sorted(glob(('images/left/*.png')))
-        self.images_right = sorted(glob(('images/right/*.png')))
+        self.images_left = sorted(glob('images/left/*.png'))
+        self.images_right = sorted(glob('images/right/*.png'))
 
     def iterate_images(self):
 
@@ -98,38 +98,38 @@ class Calibrate:
         # print(camera_matrix_right)
         # print(new_camera_matrix_right)
 
-# chessboardSize = (9, 6)
-#
-# imgL = cv2.imread('images/imageL0.png')
-# imgR = cv2.imread('images/imageR5.png')
-#
-# grayL = cv2.cvtColor(imgL, cv2.COLOR_BGR2GRAY)
-# grayR = cv2.cvtColor(imgR, cv2.COLOR_BGR2GRAY)
-#
-# # Find the chess board corners
-# retL, cornersL = cv2.findChessboardCorners(grayL, chessboardSize, None)
-# retR, cornersR = cv2.findChessboardCorners(grayR, chessboardSize, None)
-#
-# objp = np.zeros((chessboardSize[0] * chessboardSize[1], 3), np.float32)
-# objp[:, :2] = np.mgrid[0:chessboardSize[0], 0:chessboardSize[1]].T.reshape(-1, 2)
-# objp = objp * 20
-#
-# if retR and retL:
-#
-#     for corner_l, corner_r in zip(cornersL, cornersR):
-#
-#         # Draw and display the corners
-#         cv2.drawChessboardCorners(imgL, chessboardSize, cornersL, retL)
-#         cv2.imshow('img left', imgL)
-#         cv2.drawChessboardCorners(imgR, chessboardSize, cornersR, retR)
-#         cv2.imshow('img right', imgR)
-#
-#
-# # cv2.imshow("LEFT", grayL)
-# # cv2.imshow("RIGHT", grayR)
-# cv2.waitKey(0)
-#
-# cv2.destroyAllWindows()
+chessboardSize = (9, 6)
+
+imgL = cv2.imread('images/imageL0.png')
+imgR = cv2.imread('images/imageR5.png')
+
+grayL = cv2.cvtColor(imgL, cv2.COLOR_BGR2GRAY)
+grayR = cv2.cvtColor(imgR, cv2.COLOR_BGR2GRAY)
+
+# Find the chess board corners
+retL, cornersL = cv2.findChessboardCorners(grayL, chessboardSize, None)
+retR, cornersR = cv2.findChessboardCorners(grayR, chessboardSize, None)
+
+objp = np.zeros((chessboardSize[0] * chessboardSize[1], 3), np.float32)
+objp[:, :2] = np.mgrid[0:chessboardSize[0], 0:chessboardSize[1]].T.reshape(-1, 2)
+objp = objp * 20
+
+if retR and retL:
+
+    for corner_l, corner_r in zip(cornersL, cornersR):
+
+        # Draw and display the corners
+        cv2.drawChessboardCorners(imgL, chessboardSize, cornersL, retL)
+        cv2.imshow('img left', imgL)
+        cv2.drawChessboardCorners(imgR, chessboardSize, cornersR, retR)
+        cv2.imshow('img right', imgR)
+
+
+# cv2.imshow("LEFT", grayL)
+# cv2.imshow("RIGHT", grayR)
+cv2.waitKey(0)
+
+cv2.destroyAllWindows()
 
 
 if __name__ == '__main__':
