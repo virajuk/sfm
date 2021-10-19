@@ -16,14 +16,14 @@ class Rain:
         else:
             Rain.__instance = self
 
+if __name__ == '__main__':
+    rain = Rain()
+    print(rain)
 
-rain = Rain()
-print(rain)
+    rain = Rain.get_instance()
+    print(rain)
 
-rain = Rain.get_instance()
-print(rain)
+    rain = Rain.get_instance()
+    print(rain)
 
-rain = Rain.get_instance()
-print(rain)
-
-print("this supposed not to happen")
+    print("this supposed not to happen")
